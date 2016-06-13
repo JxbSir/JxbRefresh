@@ -16,7 +16,7 @@ self.taleView.addPullRefresh({ [weak self] in
     })
 })
 ```
-![](https://raw.githubusercontent.com/JxbSir/JxbRefresh/master/screen/1.gif)
+![](https://raw.githubusercontent.com/JxbSir/JxbRefresh/master/1.gif)
 
 
 ###Style2: pull refresh for gif
@@ -41,7 +41,7 @@ self.taleView.addPullRefresh({ [weak self] in
             })
         })
 ```
-![](https://raw.githubusercontent.com/JxbSir/JxbRefresh/master/screen/2.gif)
+![](https://raw.githubusercontent.com/JxbSir/JxbRefresh/master/2.gif)
 
 ###Style3: pull refresh for load more data
 ``` object-c
@@ -52,4 +52,4 @@ self.taleView.addPullRefresh({ [weak self] in
             })
         })
 ```
-![](https://raw.githubusercontent.com/JxbSir/JxbRefresh/master/screen/3.gif)
+![](https://raw.githubusercontent.com/JxbSir/JxbRefresh/master/3.gif)
