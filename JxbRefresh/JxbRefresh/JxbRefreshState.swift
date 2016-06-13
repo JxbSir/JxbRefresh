@@ -8,6 +8,8 @@
 
 import Foundation
 
+typealias JxbRefreshClosure = () -> ()
+
 enum JxbRefreshPullState : Int {
     case None
     case Pulling

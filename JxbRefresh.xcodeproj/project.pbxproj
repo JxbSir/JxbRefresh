@@ -11,6 +11,7 @@
 		D0D311211D0D83D800BA80C0 /* JxbRefreshGifHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D311201D0D83D800BA80C0 /* JxbRefreshGifHeader.swift */; };
 		D0D311231D0D83F100BA80C0 /* JxbRefreshState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D311221D0D83F100BA80C0 /* JxbRefreshState.swift */; };
 		D0D311251D0D88A300BA80C0 /* JxbRefreshBaseHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D311241D0D88A300BA80C0 /* JxbRefreshBaseHeader.swift */; };
+		D0D311291D0E515800BA80C0 /* JxbNextRefreshFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D311281D0E515800BA80C0 /* JxbNextRefreshFooter.swift */; };
 		D0FDB42D1D0D34DD00596912 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FDB42C1D0D34DD00596912 /* AppDelegate.swift */; };
 		D0FDB42F1D0D34DD00596912 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FDB42E1D0D34DD00596912 /* ViewController.swift */; };
 		D0FDB4321D0D34DD00596912 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0FDB4301D0D34DD00596912 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		D0D311201D0D83D800BA80C0 /* JxbRefreshGifHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JxbRefreshGifHeader.swift; sourceTree = "<group>"; };
 		D0D311221D0D83F100BA80C0 /* JxbRefreshState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JxbRefreshState.swift; sourceTree = "<group>"; };
 		D0D311241D0D88A300BA80C0 /* JxbRefreshBaseHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JxbRefreshBaseHeader.swift; sourceTree = "<group>"; };
+		D0D311281D0E515800BA80C0 /* JxbNextRefreshFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JxbNextRefreshFooter.swift; sourceTree = "<group>"; };
 		D0FDB4291D0D34DD00596912 /* JxbRefresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JxbRefresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0FDB42C1D0D34DD00596912 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0FDB42E1D0D34DD00596912 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				D0D311241D0D88A300BA80C0 /* JxbRefreshBaseHeader.swift */,
 				D0FDB4411D0D391900596912 /* JxbRefreshHeader.swift */,
 				D0D311201D0D83D800BA80C0 /* JxbRefreshGifHeader.swift */,
+				D0D311281D0E515800BA80C0 /* JxbNextRefreshFooter.swift */,
 				D0D3111E1D0D664000BA80C0 /* JxbRefresh.bundle */,
 			);
 			path = JxbRefresh;
@@ -169,6 +172,7 @@
 				D0FDB42D1D0D34DD00596912 /* AppDelegate.swift in Sources */,
 				D0D311251D0D88A300BA80C0 /* JxbRefreshBaseHeader.swift in Sources */,
 				D0FDB4401D0D371200596912 /* UIScrollView+JxbRefresh.swift in Sources */,
+				D0D311291D0E515800BA80C0 /* JxbNextRefreshFooter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
