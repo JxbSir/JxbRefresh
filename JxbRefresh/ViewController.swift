@@ -76,6 +76,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                     //self?.taleView.setFooterEnable(false)
                 })
             })
+            
+            self.taleView.triggerPullToRefresh()
         }
     }
 
