@@ -216,12 +216,6 @@ extension UIScrollView {
     }
     
     private func p_adjustFooterRefresh(baseFooter: JxbNextRefreshFooter) {
-//        if baseFooter.state != JxbRefreshPullState.Refreshing {
-//            let progress = (-self.contentInset.top - self.contentOffset.y - offset_morepull_y) / offset_heaer_y
-//            if (progress > 0) {
-//                baseFooter.pulling(progress)
-//            }
-//        }
         if baseFooter.state == JxbRefreshPullState.WillRefresh {
             baseFooter.state = JxbRefreshPullState.Refreshing
             if baseFooter.jxbClosure != nil {
