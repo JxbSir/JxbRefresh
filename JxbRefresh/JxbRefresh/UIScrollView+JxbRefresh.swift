@@ -63,9 +63,7 @@ extension UIScrollView {
         self.jxbFooter = JxbNextRefreshFooter.init(frame: CGRectMake(0, 0, self.frame.width, offset_footer_y))
         self.jxbFooter?.backgroundColor = self.backgroundColor
         self.jxbFooter!.jxbClosure = closure
-        
-        self.addObserver(self, forKeyPath: JxbContentOffset, options: .New, context: nil)
-        self.addObserver(self, forKeyPath: JxbPanstate, options: .New, context: nil)
+        self.p_addObsever()
     }
    
     /**
