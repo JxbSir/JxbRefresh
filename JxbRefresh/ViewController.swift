@@ -32,7 +32,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.backgroundColor = UIColor.whiteColor()
         self.title = "JxbRefresh in Swift"
         self.taleView.delegate = self
         self.taleView.dataSource = self
@@ -77,7 +77,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                 })
             })
             
-            self.taleView.triggerPullToRefresh()
+//            self.taleView.triggerPullToRefresh()
         }
     }
 

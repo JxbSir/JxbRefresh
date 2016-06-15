@@ -11,7 +11,7 @@ import UIKit
 class JxbRefreshBaseHeader: UIView {
     var state: JxbRefreshPullState = .None
     var jxbClosure: JxbRefreshClosure?
-    
+
     func pulling(progress: CGFloat) {
     }
     

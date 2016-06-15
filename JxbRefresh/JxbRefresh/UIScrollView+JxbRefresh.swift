@@ -23,7 +23,7 @@ private let JxbPanstate = "panGestureRecognizer.state";
 
 extension UIScrollView {
     //MARK: public function
-    
+
     /**
      下拉刷新函数 / the function of pull action
      
@@ -34,7 +34,6 @@ extension UIScrollView {
         self.jxbHeader?.backgroundColor = self.backgroundColor
         self.jxbHeader!.jxbClosure = closure
         self.addSubview(self.jxbHeader!)
-        self.p_addObsever()
     }
     
     /**
@@ -51,7 +50,18 @@ extension UIScrollView {
         self.jxbGifHeader!.images_idle = (idleImages as! [UIImage])
         self.jxbGifHeader!.images_refresh = (refreshImages as! [UIImage])
         self.addSubview(self.jxbGifHeader!)
-        self.p_addObsever()
+    }
+    
+    /**
+     触发下拉刷新 / trigger to pull to refresh
+     */
+    func triggerPullToRefresh() {
+        let baseHeader: JxbRefreshBaseHeader? = self.p_getCurrentHeader()
+        if baseHeader != nil {
+            baseHeader?.state = .WillRefresh
+            self.p_adjustRefresh(baseHeader!)
+  
+        }
     }
     
     /**
@@ -63,12 +73,10 @@ extension UIScrollView {
         self.jxbFooter = JxbNextRefreshFooter.init(frame: CGRectMake(0, 0, self.frame.width, offset_footer_y))
         self.jxbFooter?.backgroundColor = self.backgroundColor
         self.jxbFooter!.jxbClosure = closure
-        self.p_addObsever()
     }
    
     /**
      当没有更多数据禁用上拉刷新 / disable the next refresh when it has no more data
-     
      - parameter enbale: true or false
      */
     func setFooterEnable(enbale: Bool) -> Void {
@@ -104,6 +112,7 @@ extension UIScrollView {
         static var JxbGifHeadRefreshName = "JxbGifHeadRefreshName"
         static var JxbFootRefreshName = "JxbFootRefreshName"
         static var JxbFootRefreshEnableName = "JxbFootRefreshEnableName"
+        static var JxbAlreadyAddObserverName = "JxbAlreadyAddObserverName"
     }
 
     private var jxbHeader: JxbRefreshHeader? {
@@ -150,9 +159,37 @@ extension UIScrollView {
         }
     }
     
+    private var alreadayAddObserver: Bool? {
+        get {
+            return objc_getAssociatedObject(self, &AssociatedKeys.JxbAlreadyAddObserverName) as? Bool
+        }
+        set {
+            if let newValue = newValue {
+                objc_setAssociatedObject(self,&AssociatedKeys.JxbAlreadyAddObserverName,newValue ,.OBJC_ASSOCIATION_ASSIGN)
+            }
+        }
+    }
+   
+    public override func willMoveToSuperview(newSuperview: UIView?) {
+        self.p_addObsever()
+        if newSuperview == nil {
+            self.p_removeObsever()
+        }
+    }
+
     private func p_addObsever() {
-        self.addObserver(self, forKeyPath: JxbContentOffset, options: .New, context: nil)
-        self.addObserver(self, forKeyPath: JxbPanstate, options: .New, context: nil)
+        if self.alreadayAddObserver == nil || self.alreadayAddObserver == false {
+            self.alreadayAddObserver = true
+            self.addObserver(self, forKeyPath: JxbContentOffset, options: .New, context: nil)
+            self.addObserver(self, forKeyPath: JxbPanstate, options: .New, context: nil)
+        }
+    }
+    
+    private func p_removeObsever() {
+        if self.alreadayAddObserver == true {
+            self.removeObserver(self, forKeyPath: JxbContentOffset)
+            self.removeObserver(self, forKeyPath: JxbPanstate)
+        }
     }
   
     override public func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
@@ -210,7 +247,9 @@ extension UIScrollView {
             }
             baseHeader.startRefresh()
             UIView.animateWithDuration(0.35, animations: { [weak self] in
-                self?.contentInset = UIEdgeInsetsMake((self?.contentInset.top)! + offset_heaer_y, 0, 0, 0)
+               self?.contentInset = UIEdgeInsetsMake((self?.contentInset.top)! + offset_heaer_y, 0, 0, 0)
+            }, completion: { [weak self] (b) in
+                self?.setContentOffset(CGPointMake(0, -(self?.contentInset.top)!), animated: true)
             })
         }
     }
