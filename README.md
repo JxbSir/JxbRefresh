@@ -3,7 +3,7 @@ A control of pull to refresh. Writen by swift
 
 -------
 ##CocoaPods
-`pod 'JxbRefresh', '~> 1.0'`
+`pod 'JxbRefresh'
 
 -------
 ##Example Code
