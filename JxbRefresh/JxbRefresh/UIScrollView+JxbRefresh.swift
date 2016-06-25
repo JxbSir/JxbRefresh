@@ -30,6 +30,7 @@ extension UIScrollView {
      - parameter closure: 执行闭包 / the function of closure
      */
     public func addPullRefresh(closure: JxbRefreshClosure) -> Void {
+        self.layoutIfNeeded()
         self.jxbHeader = JxbRefreshHeader.init(frame: CGRectMake(0, -offset_heaer_y, self.frame.width, offset_heaer_y))
         self.jxbHeader?.backgroundColor = self.backgroundColor
         self.jxbHeader!.jxbClosure = closure
@@ -44,6 +45,7 @@ extension UIScrollView {
      - parameter closure:       执行闭包 / the function of closure
      */
     public func addGifPullRefresh(idleImages idleImages: NSArray, refreshImages: NSArray, closure: JxbRefreshClosure) -> Void {
+        self.layoutIfNeeded()
         self.jxbGifHeader = JxbRefreshGifHeader.init(frame: CGRectMake(0, -offset_heaer_y, self.frame.width, offset_heaer_y))
         self.jxbGifHeader!.backgroundColor = self.backgroundColor
         self.jxbGifHeader!.jxbClosure = closure
@@ -69,6 +71,7 @@ extension UIScrollView {
      - parameter closure: 执行闭包 / the function of closure
      */
     public func addFooterRefresh(closure closure:JxbRefreshClosure) ->Void {
+        self.layoutIfNeeded()
         self.footerEnable = true
         self.jxbFooter = JxbNextRefreshFooter.init(frame: CGRectMake(0, 0, self.frame.width, offset_footer_y))
         self.jxbFooter?.backgroundColor = self.backgroundColor
