@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D0D3111F1D0D664000BA80C0 /* JxbRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D0D3111E1D0D664000BA80C0 /* JxbRefresh.bundle */; };
+		D05BEE951D1E963700D8DFCE /* JxbRefreshIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05BEE941D1E963700D8DFCE /* JxbRefreshIcon.swift */; };
 		D0D311211D0D83D800BA80C0 /* JxbRefreshGifHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D311201D0D83D800BA80C0 /* JxbRefreshGifHeader.swift */; };
 		D0D311231D0D83F100BA80C0 /* JxbRefreshState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D311221D0D83F100BA80C0 /* JxbRefreshState.swift */; };
 		D0D311251D0D88A300BA80C0 /* JxbRefreshBaseHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D311241D0D88A300BA80C0 /* JxbRefreshBaseHeader.swift */; };
@@ -22,7 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D0D3111E1D0D664000BA80C0 /* JxbRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JxbRefresh.bundle; sourceTree = "<group>"; };
+		D05BEE941D1E963700D8DFCE /* JxbRefreshIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JxbRefreshIcon.swift; sourceTree = "<group>"; };
 		D0D311201D0D83D800BA80C0 /* JxbRefreshGifHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JxbRefreshGifHeader.swift; sourceTree = "<group>"; };
 		D0D311221D0D83F100BA80C0 /* JxbRefreshState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JxbRefreshState.swift; sourceTree = "<group>"; };
 		D0D311241D0D88A300BA80C0 /* JxbRefreshBaseHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JxbRefreshBaseHeader.swift; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 				D0FDB4411D0D391900596912 /* JxbRefreshHeader.swift */,
 				D0D311201D0D83D800BA80C0 /* JxbRefreshGifHeader.swift */,
 				D0D311281D0E515800BA80C0 /* JxbNextRefreshFooter.swift */,
-				D0D3111E1D0D664000BA80C0 /* JxbRefresh.bundle */,
+				D05BEE941D1E963700D8DFCE /* JxbRefreshIcon.swift */,
 			);
 			path = JxbRefresh;
 			sourceTree = "<group>";
@@ -151,7 +151,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0D3111F1D0D664000BA80C0 /* JxbRefresh.bundle in Resources */,
 				D0FDB4371D0D34DD00596912 /* LaunchScreen.storyboard in Resources */,
 				D0FDB4341D0D34DD00596912 /* Assets.xcassets in Resources */,
 				D0FDB4321D0D34DD00596912 /* Main.storyboard in Resources */,
@@ -170,6 +169,7 @@
 				D0FDB4421D0D391900596912 /* JxbRefreshHeader.swift in Sources */,
 				D0D311211D0D83D800BA80C0 /* JxbRefreshGifHeader.swift in Sources */,
 				D0FDB42D1D0D34DD00596912 /* AppDelegate.swift in Sources */,
+				D05BEE951D1E963700D8DFCE /* JxbRefreshIcon.swift in Sources */,
 				D0D311251D0D88A300BA80C0 /* JxbRefreshBaseHeader.swift in Sources */,
 				D0FDB4401D0D371200596912 /* UIScrollView+JxbRefresh.swift in Sources */,
 				D0D311291D0E515800BA80C0 /* JxbNextRefreshFooter.swift in Sources */,

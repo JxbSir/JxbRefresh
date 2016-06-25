@@ -71,10 +71,12 @@ class JxbRefreshHeader: JxbRefreshBaseHeader {
         self.viewRefresh = JxbRefreshIcon.init(frame: CGRectMake(frame.width / 2 - 16, frame.height / 2 - 12, 24, 24))
         self.viewRefresh!.layer.cornerRadius = 12
         self.addSubview(self.viewRefresh!)
-        
-        self.imgRefresh.image = UIImage.init(named: bundelpath.stringByAppendingPathComponent("icon_jxb_refresh.png"))
+       
+        let icondata = NSData.init(base64EncodedString: iconRefresh, options: .IgnoreUnknownCharacters)
+        self.imgRefresh.image = UIImage.init(data: icondata!)
         self.imgRefresh.frame = CGRectMake(4, 4, 16, 16)
         self.viewRefresh!.addSubview(self.imgRefresh)
+
     }
     
     required init?(coder aDecoder: NSCoder) {
