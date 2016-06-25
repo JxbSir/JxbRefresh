@@ -29,7 +29,7 @@ extension UIScrollView {
      
      - parameter closure: 执行闭包 / the function of closure
      */
-    func addPullRefresh(closure: JxbRefreshClosure) -> Void {
+    public func addPullRefresh(closure: JxbRefreshClosure) -> Void {
         self.jxbHeader = JxbRefreshHeader.init(frame: CGRectMake(0, -offset_heaer_y, self.frame.width, offset_heaer_y))
         self.jxbHeader?.backgroundColor = self.backgroundColor
         self.jxbHeader!.jxbClosure = closure
@@ -43,7 +43,7 @@ extension UIScrollView {
      - parameter refreshImages: 刷新过程图片组 / the images when refreshing
      - parameter closure:       执行闭包 / the function of closure
      */
-    func addGifPullRefresh(idleImages idleImages: NSArray, refreshImages: NSArray, closure: JxbRefreshClosure) -> Void {
+    public func addGifPullRefresh(idleImages idleImages: NSArray, refreshImages: NSArray, closure: JxbRefreshClosure) -> Void {
         self.jxbGifHeader = JxbRefreshGifHeader.init(frame: CGRectMake(0, -offset_heaer_y, self.frame.width, offset_heaer_y))
         self.jxbGifHeader!.backgroundColor = self.backgroundColor
         self.jxbGifHeader!.jxbClosure = closure
@@ -55,7 +55,7 @@ extension UIScrollView {
     /**
      触发下拉刷新 / trigger to pull to refresh
      */
-    func triggerPullToRefresh() {
+    public func triggerPullToRefresh() {
         let baseHeader: JxbRefreshBaseHeader? = self.p_getCurrentHeader()
         if baseHeader != nil {
             baseHeader?.state = .WillRefresh
@@ -68,7 +68,7 @@ extension UIScrollView {
      上拉刷新函数 / the function of pull next page action
      - parameter closure: 执行闭包 / the function of closure
      */
-    func addFooterRefresh(closure closure:JxbRefreshClosure) ->Void {
+    public func addFooterRefresh(closure closure:JxbRefreshClosure) ->Void {
         self.footerEnable = true
         self.jxbFooter = JxbNextRefreshFooter.init(frame: CGRectMake(0, 0, self.frame.width, offset_footer_y))
         self.jxbFooter?.backgroundColor = self.backgroundColor
@@ -79,14 +79,14 @@ extension UIScrollView {
      当没有更多数据禁用上拉刷新 / disable the next refresh when it has no more data
      - parameter enbale: true or false
      */
-    func setFooterEnable(enbale: Bool) -> Void {
+    public func setFooterEnable(enbale: Bool) -> Void {
         self.footerEnable = enbale
     }
     
     /**
      结束下拉刷新 / Finish Refresh
      */
-    func stopPullRefresh() {
+    public func stopPullRefresh() {
         let baseHeader: JxbRefreshBaseHeader? = self.p_getCurrentHeader()
         dispatch_async(dispatch_get_main_queue(), {[weak self, weak baseHeader] in
             if baseHeader?.state == JxbRefreshPullState.Refreshing {
