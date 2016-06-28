@@ -174,6 +174,9 @@ extension UIScrollView {
     }
    
     public override func willMoveToSuperview(newSuperview: UIView?) {
+        if self.jxbHeader == nil && self.jxbFooter == nil {
+            return
+        }
         self.p_addObsever()
         if newSuperview == nil {
             self.p_removeObsever()
