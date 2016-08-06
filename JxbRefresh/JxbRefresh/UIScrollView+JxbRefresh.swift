@@ -35,6 +35,7 @@ extension UIScrollView {
         self.jxbHeader?.backgroundColor = self.backgroundColor
         self.jxbHeader!.jxbClosure = closure
         self.addSubview(self.jxbHeader!)
+        self.p_addObsever()
     }
     
     /**
@@ -52,6 +53,7 @@ extension UIScrollView {
         self.jxbGifHeader!.images_idle = (idleImages as! [UIImage])
         self.jxbGifHeader!.images_refresh = (refreshImages as! [UIImage])
         self.addSubview(self.jxbGifHeader!)
+        self.p_addObsever()
     }
     
     /**
@@ -76,6 +78,7 @@ extension UIScrollView {
         self.jxbFooter = JxbNextRefreshFooter.init(frame: CGRectMake(0, 0, self.frame.width, offset_footer_y))
         self.jxbFooter?.backgroundColor = self.backgroundColor
         self.jxbFooter!.jxbClosure = closure
+        self.p_addObsever()
     }
    
     /**
@@ -172,12 +175,8 @@ extension UIScrollView {
             }
         }
     }
-   
+    
     public override func willMoveToSuperview(newSuperview: UIView?) {
-        if self.jxbHeader == nil && self.jxbFooter == nil {
-            return
-        }
-        self.p_addObsever()
         if newSuperview == nil {
             self.p_removeObsever()
         }
