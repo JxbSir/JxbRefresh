@@ -9,10 +9,10 @@
 import UIKit
 
 class JxbRefreshBaseHeader: UIView {
-    var state: JxbRefreshPullState = .None
+    var state: JxbRefreshPullState = .none
     var jxbClosure: JxbRefreshClosure?
 
-    func pulling(progress: CGFloat) {
+    func pulling(_ progress: CGFloat) {
     }
     
     func startRefresh() {

@@ -7,20 +7,33 @@
 //
 
 import UIKit
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
 
 class JxbRefreshGifHeader: JxbRefreshBaseHeader {
 
     var images_idle: [UIImage]?
     var images_refresh: [UIImage]?
     
-    private let bundelpath = "JxbRefresh.bundle" as NSString
-    private let imgRefresh: UIImageView = UIImageView.init()
+    fileprivate let bundelpath = "JxbRefresh.bundle" as NSString
+    fileprivate let imgRefresh: UIImageView = UIImageView.init()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.imgRefresh.image = UIImage.init()
         self.imgRefresh.frame = self.bounds
-        self.imgRefresh.contentMode = .Center
+        self.imgRefresh.contentMode = .center
         self.imgRefresh.layer.masksToBounds = true
         self.addSubview(self.imgRefresh)
     }
@@ -29,7 +42,7 @@ class JxbRefreshGifHeader: JxbRefreshBaseHeader {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func pulling(progress: CGFloat) {
+    override func pulling(_ progress: CGFloat) {
         let index = Int(CGFloat((images_idle?.count)!) * progress)
         if index < images_idle?.count {
             self.imgRefresh.image = images_idle![index]
