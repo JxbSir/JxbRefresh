@@ -10,13 +10,13 @@ import UIKit
 
 class JxbNextRefreshFooter: JxbRefreshBaseHeader {
 
-    private let indicator: UIActivityIndicatorView = UIActivityIndicatorView.init()
+    fileprivate let indicator: UIActivityIndicatorView = UIActivityIndicatorView.init()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        self.indicator.activityIndicatorViewStyle = .Gray
-        self.indicator.frame = CGRectMake(0, 0, 32, 32)
+        self.indicator.activityIndicatorViewStyle = .gray
+        self.indicator.frame = CGRect(x: 0, y: 0, width: 32, height: 32)
         self.indicator.center = self.center
         self.addSubview(indicator)
     }

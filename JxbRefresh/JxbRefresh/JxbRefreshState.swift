@@ -11,8 +11,8 @@ import Foundation
 public typealias JxbRefreshClosure = () -> ()
 
 enum JxbRefreshPullState : Int {
-    case None
-    case Pulling
-    case WillRefresh
-    case Refreshing
+    case none
+    case pulling
+    case willRefresh
+    case refreshing
 }
